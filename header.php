@@ -28,7 +28,7 @@
 	<div class="annoucement-bar pt-2 pb-2">
       <div class="container">
 	       <div class="row">
-		       <div class="col-md-4">
+		       <div class="col-md-4 col-sm-12">
               		<ul class="annoucement-bar__list">
 						<li>
 							<i class="bi bi-telephone rounded-circle"></i>
@@ -74,17 +74,19 @@
 
          <div class="container pt-2 pb-2">
 
-				<div class="row">
-					<div class="col site-header__logo">
+				<div class="row align-items-center pb-2">
+					<div class="col site-header__logo d-flex justify-content-center justify-content-md-start pb-2">
 					<?php the_custom_logo(); ?> 
 					</div>
 
-					<div class="col-md-5">
-						search:
+					<div class="col-sm-12 col-md-5">
+						<?php aws_get_search_form( true ); ?>
 					</div>
 
-					<div class="col cart">
-						cart
+					<div class="col cart d-flex justify-content-center justify-content-md-end align-items-center pt-2">
+					<a  href="<?php echo wc_get_cart_url(); ?>"><i class="bi bi-bag-dash p-2"></i></a>
+
+					<a class="cart-customlocation" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> – <?php echo WC()->cart->get_cart_total(); ?></a>
 					</div>
 
 				</div>
@@ -112,6 +114,8 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
+
+
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'retail02' ); ?></button>
 			<?php
@@ -122,5 +126,8 @@
 				)
 			);
 			?>
-		</nav><!-- #site-navigation -->
+		</nav>
+		
+		
+		<!-- #site-navigation -->
 	</header><!-- #masthead -->

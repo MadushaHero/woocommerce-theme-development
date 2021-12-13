@@ -11379,4 +11379,10 @@ fieldset:disabled .btn {
     display: none;
   }
 }
+
+.aws-container .aws-show-clear .aws-search-field {
+  font-size: 0.9rem;
+  padding-left: 1.4rem;
+  border-radius: 20px !important;
+}
 /*# sourceMappingURL=main.css.map */
