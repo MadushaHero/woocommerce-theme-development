@@ -28,19 +28,19 @@
 	<div class="annoucement-bar pt-2 pb-2">
       <div class="container">
 	       <div class="row">
-		       <div class="col-md-4 col-sm-12">
+		       <div class="col-md-5">
               		<ul class="annoucement-bar__list">
 						<li>
 							<i class="bi bi-telephone rounded-circle"></i>
-							<a href="tel: +61480048740">+61480048740</a>
+							<a href="tel: +61480048740" class="text-decoration-none">+61480048740</a>
 						</li>
 						<li>
 								<i class="bi bi-envelope rounded-circle"></i>
-								<a href="mailto:mail@madushalakmal.com">mail@madushalakmal.com</a>
+								<a href="mailto:mail@madushalakmal.com " class="text-decoration-none">mail@madushalakmal.com </a>
 						</li>
 			      </ul>
 		       </div>
-		       <div class="col-md-8 d-flex justify-content-end">
+		       <div class="col-md-7 d-flex justify-content-end">
            
 		         <ul class="annoucement-bar__list">
 						<li>
@@ -93,32 +93,24 @@
 
 		</div>
 	 
-		<div class="site-branding">
-
-
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$retail02_description = get_bloginfo( 'description', 'display' );
-			if ( $retail02_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $retail02_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+		
 
 
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'retail02' ); ?></button>
-			<?php
+		<nav id="site-navigation" class="main-navigation bg-primary">
+			<div class="container d-flex justify-content-center">
+				<div class="row">
+					<div class="col-12 d-flex justify-content-center">
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+						<i class="bi bi-list"></i>
+						<?php esc_html_e( 'Primary Menu', 'retail02' ); ?>
+					
+					</button>
+			
+
+					</div>
+					<div class="col-12 text-center">
+					<?php
 			wp_nav_menu(
 				array(
 					'theme_location' => 'menu-1',
@@ -126,6 +118,10 @@
 				)
 			);
 			?>
+					</div>
+				</div>
+		
+			</div>
 		</nav>
 		
 		

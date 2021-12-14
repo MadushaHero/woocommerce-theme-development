@@ -89,6 +89,39 @@ border-bottom:1px solid var(--bs-gray);
     }
 }
 
+/*main menu */
+
+.main-navigation  {
+
+    font-weight: 600;
+
+    .current-menu-item {
+
+        background-color: rgb(253, 135, 92);
+    }
+     a {
+
+        color: var(--bs-white);
+        padding: 1rem 1.4rem ;
+     }
+
+     a:hover {
+
+        background-color: rgb(253, 135, 92);
+     }
+
+     .menu-toggle {
+
+        background-color: $primary;
+        color: white;
+        border: none;
+     }
+
+     
+}
+
+
+
 
 
 

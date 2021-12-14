@@ -16,7 +16,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-   <h1>Front Page </h1>
+  
 		<?php
 		while ( have_posts() ) :
 			the_post();
