@@ -23,6 +23,23 @@ $custom-color: (
 
 $theme-colors: map-merge($theme-colors , $custom-color);
 
+$utilities: (
+
+"rounded" : (
+
+property: border-radius,
+class: rounded,
+values: (
+
+    null: 1rem,
+    circle: 50%
+
+    )
+
+  )
+
+);
+
 @import "./bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
@@ -118,6 +135,21 @@ border-bottom:1px solid var(--bs-gray);
      }
 
      
+}
+
+.carousel {
+
+    .carousel-control-prev, .carousel-control-next {
+
+        width: 9%;
+        
+
+    }
+
+
+  
+
+
 }
 
 
