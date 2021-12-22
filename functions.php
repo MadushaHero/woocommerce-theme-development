@@ -149,7 +149,7 @@ function retail02_scripts() {
 	wp_enqueue_script( 'retail02-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'boostrap-popper',  'https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js', array('jquery'));
 	wp_enqueue_script( 'boostrap-script',  'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js', array('jquery'));
-	wp_enqueue_script( 'retail-script',  get_template_directory_uri() .'js/script.js', array('jquery'));
+	wp_enqueue_script( 'retail-script',  get_template_directory_uri() .'/js/script.js', array('jquery'));
 
 
 	
@@ -226,3 +226,127 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	return $fragments;
 }
 
+/***** */
+
+
+
+/***** */
+
+function custom_footer_widget_one()
+{
+
+	$args  = array(
+
+		'id'   =>  'footer-widget-col-one',
+		'name'   => __('Footer Column one','text_domain'),
+		'description' => __('Column one','text_domain'),
+		'before_title' => '<h3 class="title"> ',
+		'after_title' => '</h3>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+
+	);
+	register_sidebar( $args);
+
+	
+
+}
+
+add_action( 'widgets_init', 'custom_footer_widget_one' );
+
+
+
+/***** */
+
+
+
+/***** */
+
+function custom_footer_widget_two()
+{
+
+	$args  = array(
+
+		'id'   =>  'footer-widget-col-two',
+		'name'   => __('Footer Column two','text_domain'),
+		'description' => __('Column one','text_domain'),
+		'before_title' => '<h3 class="title"> ',
+		'after_title' => '</h3>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+
+	);
+	register_sidebar( $args);
+
+	
+
+}
+
+add_action( 'widgets_init', 'custom_footer_widget_two' );
+
+
+/***** */
+
+
+
+/***** */
+
+function custom_footer_widget_three()
+{
+
+	$args  = array(
+
+		'id'   =>  'footer-widget-col-three',
+		'name'   => __('Footer Column three','text_domain'),
+		'description' => __('Column one','text_domain'),
+		'before_title' => '<h3 class="title"> ',
+		'after_title' => '</h3>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+
+	);
+	register_sidebar( $args);
+
+	
+
+}
+
+add_action( 'widgets_init', 'custom_footer_widget_three' );
+/*****
+ * 
+ * 
+ * woocommerce
+ */
+
+ add_theme_support( 'woocommerce');
+
+
+ //remove woocommerce style
+
+ function remove_woocommerce_styles ($enqueue_styles)
+ {
+
+	unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
+	//unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
+	//unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
+	return $enqueue_styles;
+}
+
+
+ 
+
+ add_filter('woocommerce_enqueue_styles','remove_woocommerce_styles');
+
+
+
+ /**
+ * Enqueue your own stylesheet
+ */
+function wp_enqueue_woocommerce_style(){
+	wp_register_style( 'mytheme-woocommerce', get_template_directory_uri() . '/css/woocommerce/woocommerce.css' );
+	
+	if ( class_exists( 'woocommerce' ) ) {
+		wp_enqueue_style( 'mytheme-woocommerce' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'wp_enqueue_woocommerce_style' );

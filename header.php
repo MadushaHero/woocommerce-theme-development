@@ -32,11 +32,11 @@
               		<ul class="annoucement-bar__list">
 						<li>
 							<i class="bi bi-telephone rounded-circle"></i>
-							<a href="tel: +61480048740" class="text-decoration-none">+61480048740</a>
+							<a href="tel: +61480048740" class="text-decoration-none link-color-a">+61 7 5494 6397</a>
 						</li>
 						<li>
 								<i class="bi bi-envelope rounded-circle"></i>
-								<a href="mailto:mail@madushalakmal.com " class="text-decoration-none">mail@madushalakmal.com </a>
+								<a href="mailto:mail@madushalakmal.com " class="text-decoration-none">dealsanddollars.beerwah@gmail.com </a>
 						</li>
 			      </ul>
 		       </div>
@@ -103,7 +103,7 @@
 					<div class="col-12 d-flex justify-content-center">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 						<i class="bi bi-list"></i>
-						<?php esc_html_e( 'Primary Menu', 'retail02' ); ?>
+						<?php esc_html_e( 'Primary Menu', 'retail02_scripts' ); ?>
 					
 					</button>
 			
